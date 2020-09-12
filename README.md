@@ -1,2 +1,2 @@
-# hackerapp
-This is a simple node application with single api.
+# samplenodeapp
+This is a simple node js application.

@@ -1,0 +1,20 @@
+{
+  "name": "hackertest",
+  "version": "1.0.0",
+  "description": "webapi application to check version",
+  "main": "index.js",
+  "scripts": {
+    "test": "mocha",
+    "start": "node index.js"
+  },
+  "author": "Garima",
+  "license": "ISC",
+  "devDependencies": {
+    "chai": "^4.2.0",
+    "chai-http": "4.2.1",
+    "mocha": "^8.1.3"
+  },
+  "dependencies": {
+    "express": "^4.17.1"
+  }
+}
