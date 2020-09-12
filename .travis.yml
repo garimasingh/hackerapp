@@ -8,7 +8,7 @@ jobs:
     - stage: build and test
       script:     
       - docker build -t garimasingh2018/hackerapp -f Dockerfile .
-      - travis_wait docker run -e CI=true garimasingh2018/hackerapp npm run test -- --coverage
+      - docker run garimasingh2018/hackerapp npm run test -- --coverage
     - stage: publish image
       script:
       - docker login -u $DOCKER_USERNAME -p $DOCKER_PASSWORD 
