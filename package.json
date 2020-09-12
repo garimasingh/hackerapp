@@ -4,7 +4,7 @@
   "description": "webapi application to check version",
   "main": "index.js",
   "scripts": {
-    "test": "mocha",
+    "test": "mocha --exit",
     "start": "node index.js"
   },
   "author": "Garima",
