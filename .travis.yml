@@ -6,12 +6,12 @@ node_js:
 services: 
     - docker
 
-before_install: 
-    - docker build -t garimasingh2018/hackerapp -f Dockerfile .
-
-script:     
-    - docker run -e CI=true garimasingh2018/hackerapp npm run test -- --coverage
-
-after_success:
-   -  docker login -u $DOCKER_USERNAME -p $DOCKER_PASSWORD ;
-      docker push garimasingh2018/hackerapp:"$TRAVIS_BRANCH-$TRAVIS_BUILD_NUMBER" ;
+jobs:
+  include:
+    - stage: build and test
+      script:     
+      - docker build -t garimasingh2018/hackerapp -f Dockerfile .
+      - docker run -e CI=true garimasingh2018/hackerapp npm run test -- --coverage
+    - stage: publish image
+      - docker login -u $DOCKER_USERNAME -p $DOCKER_PASSWORD ;
+      - docker push garimasingh2018/hackerapp:"$TRAVIS_BRANCH-$TRAVIS_BUILD_NUMBER" ;
